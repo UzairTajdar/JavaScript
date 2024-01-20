@@ -20,7 +20,9 @@ const DC_heros = ["Superman","wander Girl","Batman"]
 
 console.log(Array.isArray("Uzair"))
 console.log(Array.from("Uzair"))
-console.log(Array.from(Object.entries({name:"Uzair"})))
+
+console.log(Array.from(Object.values({name:"Uzair"})))
+console.log(Array.from(Object.keys({name:"Uzair"})))
 
 // const score_1 = 100
 // const score_2 = 200

@@ -1,5 +1,3 @@
-//Singleton
-// Object.create
 
 //
 const mysymbol = Symbol("key")

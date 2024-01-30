@@ -8,7 +8,7 @@ const numbers = [1,2,3,4]
 
 const newNum = numbers.reduce( (acc, currval)=>( acc + currval),0 )
 
-// console.log(newNum)
+// console.log(newNum),
 
 
 const shoppingCart = [

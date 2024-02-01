@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create li</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(LangName) {
+        const li = document.createElement('li');
+        li.innerHTML = `${LangName}`
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage("Python");
+    addLanguage('C++');
+
+    //Optimize way to make li
+    function addoptiLang(LangName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(LangName))
+        document.querySelector('.language').appendChild(li);
+    }
+    addoptiLang('NodeJs')
+
+    //Edit a li
+
+    const secLi = document.querySelector('li:nth-child(2)');
+    // secLi.innerHTML = "MOJO"
+    // const newli = document.querySelector('li')
+    const newli = document.createElement('li')
+    newli.textContent = "CSS"
+    secLi.replaceWith(newli)
+
+    //Another way to edit
+    const firstLi = document.querySelector('li:nth-child(1)');
+    firstLi.outerHTML = "<li>Typescript</li>"
+
+    //remove element
+    const lastLi = document.querySelector('li:last-child');
+    lastLi.remove()
+
+</script>
+</html>

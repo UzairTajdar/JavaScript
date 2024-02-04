@@ -45,6 +45,8 @@ function validateGuess(guess) {
 function checkGuess(guess) {
     if (guess === randomNumber) {
         displayMessage('You Guessed It Right');
+        endGame();
+
     }else if(guess < randomNumber){
         displayMessage('You Guess Too Low'); 
     }
@@ -77,14 +79,14 @@ function endGame(){
 function newGame(){
    const newGameStart = document.querySelector('#newGame');
    newGameStart.addEventListener('click',function(e){
-    randomNumber = Math.floor(Math.random() * 100) + 1
-    prevGuess = []
-    numGuess = 1
-    guessField.value = ''
-    lastResult .innerHTML = `${11-numGuess}`
-    guessField.removeAttribute('disabled')
-    startOver.removeChild(p)
-    lowOrHi.innerHTML = ``
+    randomNumber = Math.floor(Math.random() * 100) + 1;
+    prevGuess = [];
+    numGuess = 1;
+    guesses.innerHTML = '';
+    lastResult .innerHTML = `${11-numGuess}`;
+    guessField.removeAttribute('disabled');
+    startOver.removeChild(p);
+    lowOrHi.innerHTML = ``;
 
     playgame = true;
    }

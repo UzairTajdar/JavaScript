@@ -26,7 +26,7 @@ body{
     margin-top: 25px;
   }
   
-  #results {
+  #results,#fat_results {
     font-size: 20px;
     margin-left: 90px;
     margin-top: 20px;

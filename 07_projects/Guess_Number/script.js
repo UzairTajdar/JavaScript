@@ -68,7 +68,7 @@ function endGame(){
     guessField.value = '';
     guessField.setAttribute('disabled','');
     p.classList.add('button');
-    p.innerHTML = `<h2 id ="newGame">Start New Game</h2>`;
+    p.innerHTML = `<button id ="newGame">Start New Game</button>`;
     startOver.appendChild(p);
     playgame = false;
     newGame();

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Time Out</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h1 id="text">Uzair Tajdar</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    const text = function () {
+        console.log('Hello '+ Date.now())
+    }
+
+    let process = setInterval(text,1000)
+
+    // ======Stop Process ====== 
+    const stop = function () {
+        clearInterval(process);
+        console.log('stop')
+    }
+    document.querySelector('#stop').addEventListener('click',()=>{
+        stop();
+    })
+
+    // ======Start Process ======
+    const start = function () {
+        process = setInterval(text,1000)
+        console.log('start')
+    }
+    document.querySelector('#start').addEventListener('click',()=>{
+        start();
+    })
+
+</script>
+</html>

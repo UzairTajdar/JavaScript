@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Ajex</title>
+</head>
+<body>
+<!--0	UNSENT	Client has been created. open() not called yet.
+    1	OPENED	open() has been called.
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3	LOADING	Downloading; responseText holds partial data.
+    4	DONE	The operation is complete. -->
+    <div class="main">
+        <button id="show"> Show Id </button>
+    </div>
+</body>
+<script>
+    const xhr =new XMLHttpRequest()
+    const url = 'https://api.github.com/users/uzairtajdar'
+    const button = document.getElementById('show')
+    xhr.open('GET',url)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.response);
+            console.log(data.avatar_url)
+            button.addEventListener('click',function (e) {
+                const img = `<img style="width:70px; height:70px" src = '${data.avatar_url}'>`;
+                const text = `${data.login}`
+                id(data,img,text);
+                button.remove()
+                // const btn = document.createElement('button')
+                // btn.innerHTML = 'reverse'
+                // document.querySelector('.main').appendChild(btn)
+
+                
+            })
+        }
+    }
+    xhr.send();
+    
+    const id = function (data ,innerText,innerImg) {
+        const div = document.createElement('div');
+        div.style.width = '100px'
+        div.style.height= '100px'
+        div.style.display = 'flex'
+        div.style.flexDirection= 'column'
+        div.style.alignItems = 'center'
+        div.style.justifyContent = 'center'
+        div.style.backgroundColor = '#414141'
+        div.style.color = 'white'
+        div.innerHTML = `${innerImg} <br> ${innerText}`
+        document.querySelector('.main').appendChild(div)
+    }
+</script>
+</html>

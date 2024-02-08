@@ -66,6 +66,25 @@ String.prototype.trueLength = function () {
     console.log(`${this}`);
     console.log(`The true length of word is : ${this.trim().length}`);
 }
-anotherUsername.trueLength()
-"Ozzy".trueLength()
-"iceTea".trueLength()
+// anotherUsername.trueLength()
+// "Ozzy".trueLength()
+// "iceTea".trueLength()
+
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+
+//   console.log(this.firstName)
+//   console.log(this.lastName)
+//   console.log(this.age)
+//   console.log(this.eyeColor)
+//   console.log(this.nationality)
+}
+
+Person.prototype.nationality = "English";
+
+const newPerson = new Person("Uzair","Tajdar",23,"Dark Brown")
+
+console.log(newPerson.nationality);
